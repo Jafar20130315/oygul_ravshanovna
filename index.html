@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oygul Ravshanovna</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for nuances not covered by Tailwind utilities */
+        body {
+            -webkit-font-smoothing: antialiased;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Mobile menu transition */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 300px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-stone-50 selection:bg-teal-200 selection:text-teal-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="text-2xl font-serif font-bold text-teal-700 cursor-pointer" onclick="scrollToSection('home')">
+                   Oygul Ravshanovna
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="scrollToSection('portfolio')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Men haqimda</button>
+                    <button onclick="scrollToSection('reviews')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Fikrlar</button>
+                    <button onclick="scrollToSection('courses')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Xizmatlar</button>
+                    <button onclick="scrollToSection('contact')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Yozilish</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-slate-600 p-2">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100">
+            <div class="flex flex-col px-4 py-4 space-y-4">
+                <button onclick="scrollToSection('portfolio')" class="text-left text-slate-600 font-medium py-2">Men haqimda</button>
+                <button onclick="scrollToSection('reviews')" class="text-left text-slate-600 font-medium py-2">Fikrlar</button>
+                <button onclick="scrollToSection('courses')" class="text-left text-slate-600 font-medium py-2">Xizmatlar</button>
+                <button onclick="scrollToSection('contact')" class="text-left text-slate-600 font-medium py-2">Yozilish</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 bg-gradient-to-br from-teal-50 to-stone-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 space-y-6 animate-on-scroll">
+                <div class="inline-block bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-semibold tracking-wide">
+                    Yordam
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 leading-tight">
+                    Barchasi  <br/> <span class="text-teal-600">yaxshi bo'ladi</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-lg">
+                    [SIZNING YOZUVINGIZ]
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button onclick="scrollToSection('contact')" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-teal-500/30 flex items-center justify-center gap-2">
+                        Yozilish <i class="ph ph-arrow-right font-bold"></i>
+                    </button>
+                    <button onclick="scrollToSection('portfolio')" class="bg-white border border-slate-300 hover:border-teal-600 text-slate-700 hover:text-teal-600 px-8 py-3 rounded-full font-medium transition-all">
+                        Ba'tafsil
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Психолог" class="w-full h-auto object-cover">
+                </div>
+                <!-- Decorative blobs -->
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10 animate-pulse"></div>
+                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10 animate-pulse delay-700"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / About Section -->
+    <section id="portfolio" class="py-20 px-4 sm:px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Men va mening metodlarim</h2>
+                <div class="w-20 h-1 bg-teal-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6">
+                        <i class="ph ph-user text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Опыт работы</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Онг ости блоклари билан ишлаш бўйича мутахасис
+
+
+                    </p>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6">
+                        <i class="ph ph-chat-circle-text text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">[SIZNING YOZUVINGIZ]</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                       Соғломсизлик
+
+                    </p>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6">
+                        <i class="ph ph-book-open text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">[SIZNING YOZUVINGIZ]</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        [SIZNING YOZUVINGIZ]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 px-4 sm:px-6 bg-teal-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Fikrlar</h2>
+                <p class="text-teal-200">[SIZNING YOZUVINGIZ]</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700 hover:bg-teal-750 transition-colors">
+                    <div class="absolute -top-4 -left-2 text-teal-600 opacity-50 font-serif text-6xl">"</div>
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-teal-100 mb-6 italic relative z-10">
+                        [KLIENT FIKRI]
+                    </p>
+                    <div class="flex justify-between items-end border-t border-teal-700 pt-4">
+                        <span class="font-bold">[KLIENT ISMI]</span>
+                        <span class="text-xs bg-teal-900 px-2 py-1 rounded text-teal-300 uppercase tracking-wider">[MUAMMOSI]</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700 hover:bg-teal-750 transition-colors">
+                    <div class="absolute -top-4 -left-2 text-teal-600 opacity-50 font-serif text-6xl">"</div>
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-teal-100 mb-6 italic relative z-10">
+                        [KLIENT FIKRI]
+                    </p>
+                    <div class="flex justify-between items-end border-t border-teal-700 pt-4">
+                        <span class="font-bold">[KLIENT ISMI]</span>
+                        <span class="text-xs bg-teal-900 px-2 py-1 rounded text-teal-300 uppercase tracking-wider">[MUAMMOSI]</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700 hover:bg-teal-750 transition-colors">
+                    <div class="absolute -top-4 -left-2 text-teal-600 opacity-50 font-serif text-6xl">"</div>
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-teal-100 mb-6 italic relative z-10">
+                        [KLIENT FIKRI]
+                    </p>
+                    <div class="flex justify-between items-end border-t border-teal-700 pt-4">
+                        <span class="font-bold">[KLIENT ISMI]</span>
+                        <span class="text-xs bg-teal-900 px-2 py-1 rounded text-teal-300 uppercase tracking-wider">[MUAMMOSI]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses / Pricing Section -->
+    <section id="courses" class="py-20 px-4 sm:px-6 bg-stone-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Варианты работы</h2>
+                <div class="w-20 h-1 bg-teal-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow p-8 flex flex-col border border-slate-100">
+                    <h3 class="text-2xl font-bold mb-2">Разовая консультация</h3>
+                    <p class="text-slate-500 mb-6">Для решения конкретного вопроса</p>
+                    <div class="text-4xl font-serif font-bold text-teal-600 mb-6">
+                        3 000 ₽ <span class="text-base font-sans text-slate-400 font-normal">/ 55 мин</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1 text-slate-600">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Онлайн (Zoom/Skype)</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Разбор одной ситуации</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Рекомендации</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Поддержка 2 дня</li>
+                    </ul>
+                    <button onclick="selectService('consultation')" class="w-full py-3 border-2 border-teal-600 text-teal-600 font-bold rounded-xl hover:bg-teal-50 transition-colors">
+                        Выбрать
+                    </button>
+                </div>
+
+                <!-- Card 2 (Popular) -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col border-2 border-teal-500 relative transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        Популярное
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Пакет "Терапия"</h3>
+                    <p class="text-slate-500 mb-6">Глубинная проработка проблем</p>
+                    <div class="text-4xl font-serif font-bold text-teal-600 mb-6">
+                        13 500 ₽ <span class="text-base font-sans text-slate-400 font-normal">/ 5 сессий</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1 text-slate-600">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Экономия 1500 ₽</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Регулярные встречи</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Глубинный анализ</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Дневник эмоций</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Домашние задания</li>
+                    </ul>
+                    <button onclick="selectService('therapy_pack')" class="w-full py-3 bg-teal-600 text-white font-bold rounded-xl hover:bg-teal-700 transition-colors shadow-lg hover:shadow-teal-500/30">
+                        Начать терапию
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow p-8 flex flex-col border border-slate-100">
+                    <h3 class="text-2xl font-bold mb-2">Курс "Самооценка"</h3>
+                    <p class="text-slate-500 mb-6">Групповой онлайн-курс</p>
+                    <div class="text-4xl font-serif font-bold text-teal-600 mb-6">
+                        5 900 ₽ <span class="text-base font-sans text-slate-400 font-normal">/ 4 недели</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1 text-slate-600">
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> 8 видеоуроков</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Закрытый чат</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> 2 общих вебинара</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Рабочая тетрадь PDF</li>
+                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Доступ навсегда</li>
+                    </ul>
+                    <button onclick="selectService('course_self')" class="w-full py-3 border-2 border-teal-600 text-teal-600 font-bold rounded-xl hover:bg-teal-50 transition-colors">
+                        Записаться на курс
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-teal-50 rounded-3xl p-8 md:p-12 shadow-inner">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-serif font-bold text-slate-900 mb-3">Запись и Оплата</h2>
+                    <p class="text-slate-600">Заполните форму, и я свяжусь с вами для подтверждения времени и оплаты.</p>
+                </div>
+
+                <!-- Success Message Container (Hidden by default) -->
+                <div id="success-message" class="hidden bg-white p-8 rounded-2xl text-center shadow-sm fade-in">
+                    <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ph-bold ph-check text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Спасибо за заявку!</h3>
+                    <p class="text-slate-600 mb-6">Ваши данные успешно отправлены. Я напишу вам на Email в течение 24 часов.</p>
+                    <button onclick="resetForm()" class="text-teal-600 font-bold hover:underline">
+                        Отправить еще одну заявку
+                    </button>
+                </div>
+
+                <!-- Main Form -->
+                <form id="lead-form" class="space-y-6 max-w-lg mx-auto">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Ваше имя</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="Иван Иванов">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="ivan@example.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Выберите услугу</label>
+                        <div class="relative">
+                            <select id="service-select" name="serviceType" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all appearance-none bg-white">
+                                <option value="consultation">Разовая консультация (3 000 ₽)</option>
+                                <option value="therapy_pack">Пакет "Терапия" (13 500 ₽)</option>
+                                <option value="course_self">Курс "Самооценка" (5 900 ₽)</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                                <i class="ph ph-credit-card text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Сообщение (необязательно)</label>
+                        <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="Кратко опишите ваш запрос или удобное время..."></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                        <span>Перейти к оплате</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                    <p class="text-xs text-center text-slate-400 mt-4">
+                        Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h4 class="text-2xl font-serif font-bold text-white mb-2">Oygul Ravshanovna</h4>
+                <p class="text-sm text-slate-500">Mutaxasis</p>
+            </div>
+            
+            <div class="flex gap-6 text-2xl">
+                <a href="t.me/@sofia_admin" class="hover:text-teal-400 transition-colors"><i class="ph ph-telegram-logo"></i></a>
+            </div>
+
+            <div class="text-center md:text-right text-sm text-slate-500">
+                <p>© 2025 Barcha huquqlar ximoyalangan</p>
+               
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
+        import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+
+        let db, auth, user, appId;
+        let firebaseInitialized = false;
+
+        // Initialize Firebase
+        async function initFirebase() {
+            try {
+                if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                    const config = JSON.parse(__firebase_config);
+                    const app = initializeApp(config);
+                    auth = getAuth(app);
+                    db = getFirestore(app);
+                    appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+
+                    onAuthStateChanged(auth, (u) => {
+                        user = u;
+                        if (u) {
+                            firebaseInitialized = true;
+                            console.log("Firebase Auth Success:", u.uid);
+                        }
+                    });
+                } else {
+                    console.warn("Firebase config missing. Running in DEMO mode.");
+                }
+            } catch (error) {
+                console.error("Firebase Init Error:", error);
+            }
+        }
+
+        // Initialize on load
+        initFirebase();
+
+        // --- Application Logic ---
+        
+        // Handle Form Submission
+        const form = document.getElementById('lead-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMsg = document.getElementById('success-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI State: Loading
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Отправка...</span>';
+
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                serviceType: form.serviceType.value,
+                message: form.message.value
+            };
+
+            try {
+                if (firebaseInitialized && user) {
+                    // Firestore Write
+                    await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'leads'), {
+                        ...formData,
+                        createdAt: serverTimestamp(),
+                        status: 'new'
+                    });
+                } else {
+                    // Demo Simulation
+                    console.log("Demo Submit:", formData);
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                }
+
+                // UI State: Success
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Submission error:", error);
+                alert("Произошла ошибка при отправке. Попробуйте еще раз.");
+            } finally {
+                // UI State: Reset Button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+            }
+        });
+
+        // Expose resetForm to window scope for the button onclick
+        window.resetForm = function() {
+            form.reset();
+            successMsg.classList.add('hidden');
+            form.classList.remove('hidden');
+        };
+    </script>
+
+    <!-- UI Scripts (Menu, Scroll) -->
+    <script>
+        // Menu Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.add('open');
+                menuIcon.classList.replace('ph-list', 'ph-x');
+            } else {
+                mobileMenu.classList.remove('open');
+                menuIcon.classList.replace('ph-x', 'ph-list');
+            }
+        });
+
+        // Smooth Scroll & Close Menu
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                // Close menu if open
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('open');
+                    menuIcon.classList.replace('ph-x', 'ph-list');
+                    isMenuOpen = false;
+                }
+                
+                // Account for fixed header
+                const headerOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Service Selection Helper
+        function selectService(value) {
+            const select = document.getElementById('service-select');
+            select.value = value;
+            scrollToSection('contact');
+        }
+    </script>
+</body>
+</html>
