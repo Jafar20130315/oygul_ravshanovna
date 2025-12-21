@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="uz" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oygul Ravshanovna</title>
+    <title>Ойгул Равшановна - Табиб, Онг ости мутахассиси, Парапсихолог</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,6 +31,11 @@
                             700: '#0f766e',
                             800: '#115e59',
                             900: '#134e4a',
+                        },
+                        gold: {
+                            100: '#fef9c3',
+                            500: '#eab308',
+                            600: '#ca8a04',
                         }
                     }
                 }
@@ -38,7 +43,6 @@
         }
     </script>
     <style>
-        /* Custom Styles for nuances not covered by Tailwind utilities */
         body {
             -webkit-font-smoothing: antialiased;
         }
@@ -49,7 +53,6 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Mobile menu transition */
         #mobile-menu {
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
             max-height: 0;
@@ -69,16 +72,16 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
-                <div class="text-2xl font-serif font-bold text-teal-700 cursor-pointer" onclick="scrollToSection('home')">
-                   Oygul Ravshanovna
+                <div class="text-xl md:text-2xl font-serif font-bold text-teal-800 cursor-pointer" onclick="scrollToSection('home')">
+                    Ойгул Равшановна
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
-                    <button onclick="scrollToSection('portfolio')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Men haqimda</button>
-                    <button onclick="scrollToSection('reviews')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Fikrlar</button>
-                    <button onclick="scrollToSection('courses')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Xizmatlar</button>
-                    <button onclick="scrollToSection('contact')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Yozilish</button>
+                    <button onclick="scrollToSection('about')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Мен ҳақимда</button>
+                    <button onclick="scrollToSection('services')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Хизматлар</button>
+                    <button onclick="scrollToSection('packages')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Пакетлар</button>
+                    <button onclick="scrollToSection('contact')" class="text-slate-600 hover:text-teal-600 transition-colors font-medium">Боғланиш</button>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -93,10 +96,10 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100">
             <div class="flex flex-col px-4 py-4 space-y-4">
-                <button onclick="scrollToSection('portfolio')" class="text-left text-slate-600 font-medium py-2">Men haqimda</button>
-                <button onclick="scrollToSection('reviews')" class="text-left text-slate-600 font-medium py-2">Fikrlar</button>
-                <button onclick="scrollToSection('courses')" class="text-left text-slate-600 font-medium py-2">Xizmatlar</button>
-                <button onclick="scrollToSection('contact')" class="text-left text-slate-600 font-medium py-2">Yozilish</button>
+                <button onclick="scrollToSection('about')" class="text-left text-slate-600 font-medium py-2">Мен ҳақимда</button>
+                <button onclick="scrollToSection('services')" class="text-left text-slate-600 font-medium py-2">Хизматлар</button>
+                <button onclick="scrollToSection('packages')" class="text-left text-slate-600 font-medium py-2">Пакетлар</button>
+                <button onclick="scrollToSection('contact')" class="text-left text-slate-600 font-medium py-2">Боғланиш</button>
             </div>
         </div>
     </nav>
@@ -105,203 +108,259 @@
     <section id="home" class="pt-32 pb-20 px-4 sm:px-6 bg-gradient-to-br from-teal-50 to-stone-100">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2 space-y-6 animate-on-scroll">
-                <div class="inline-block bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-semibold tracking-wide">
-                    Yordam
+                <div class="inline-block bg-teal-100 text-teal-900 px-3 py-1 rounded-full text-sm font-semibold tracking-wide border border-teal-200">
+                    Табиб · Онг ости мутахассиси · Парапсихолог
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 leading-tight">
-                    Barchasi  <br/> <span class="text-teal-600">yaxshi bo'ladi</span>
+                    <span class="text-teal-700">Ойгул Равшановна</span>
                 </h1>
-                <p class="text-lg text-slate-600 leading-relaxed max-w-lg">
-                    [SIZNING YOZUVINGIZ]
+                <p class="text-xl text-slate-700 font-medium">
+                    Мен билан иш якка тартибда, хавфсиз ва босқичма-босқич олиб борилади.
+                </p>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-lg italic border-l-4 border-teal-500 pl-4">
+                    "Аввало хавфсизлик, сўнг онг ости, кейин ҳаётда ўзгариш."
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <button onclick="scrollToSection('contact')" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-teal-500/30 flex items-center justify-center gap-2">
-                        Yozilish <i class="ph ph-arrow-right font-bold"></i>
+                    <button onclick="scrollToSection('contact')" class="bg-teal-700 hover:bg-teal-800 text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg hover:shadow-teal-500/30 flex items-center justify-center gap-2">
+                        Қабул вақтини белгилаш <i class="ph ph-arrow-right font-bold"></i>
                     </button>
-                    <button onclick="scrollToSection('portfolio')" class="bg-white border border-slate-300 hover:border-teal-600 text-slate-700 hover:text-teal-600 px-8 py-3 rounded-full font-medium transition-all">
-                        Ba'tafsil
+                    <button onclick="scrollToSection('about')" class="bg-white border border-slate-300 hover:border-teal-600 text-slate-700 hover:text-teal-600 px-8 py-3 rounded-full font-medium transition-all">
+                        Иш услубим
                     </button>
                 </div>
             </div>
             <div class="md:w-1/2 relative">
-                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
-                    <img src="blob:https://web.telegram.org/4e49e762-66eb-4095-9606-ab06b2b9e66a" alt="Психолог" class="w-full h-auto object-cover">
+                <!-- ФОТО УЧУН ЖОЙ (Main Photo Placeholder) -->
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 aspect-[4/5] bg-stone-200 group">
+                    <!-- Замените src на реальное фото -->
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ойгул Равшановна" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 <!-- Decorative blobs -->
                 <div class="absolute -top-10 -right-10 w-64 h-64 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10 animate-pulse"></div>
-                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10 animate-pulse delay-700"></div>
+                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10 animate-pulse delay-700"></div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio / About Section -->
-    <section id="portfolio" class="py-20 px-4 sm:px-6 bg-white">
+    <!-- About / Methods Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Men va mening metodlarim</h2>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Мен қандай ишлайман?</h2>
+                <div class="w-24 h-1 bg-teal-500 mx-auto rounded-full"></div>
+                <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
+                    Мен муаммо билан юзаки ишламайман. Блоклар чуқур онг ости даражасида ечилади, шунинг учун натижа барқарор бўлади.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm border-t-4 border-teal-500">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-700 mb-6">
+                        <i class="ph ph-shield-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Хавфсизлик</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Шоширмайман, мажбурламайман, оғир қарорларга босмайман. Сеанслар тана тайёрлигини ҳисобга олган ҳолда ўтказилади.
+                    </p>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm border-t-4 border-teal-500">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-700 mb-6">
+                        <i class="ph ph-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Онг ости билан иш</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Фақат гапириш билан чекланилмайди. Тана реакциялари ва болаликда шаклланган дастурлар билан чуқур ишланади.
+                    </p>
+                </div>
+
+                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm border-t-4 border-teal-500">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-700 mb-6">
+                        <i class="ph ph-plant text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Барқарор натижа</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Ҳақиқий ўзгариш онг эмас, онг ости ўзгарганда бошланади. Ички мустақилликни шакллантирамиз.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Pricing Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 bg-stone-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Хизматлар ва Нархлар</h2>
                 <div class="w-20 h-1 bg-teal-500 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md">
-                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6">
-                        <i class="ph ph-user text-2xl"></i>
+                <!-- Card 1: Consultation -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow p-8 flex flex-col border border-slate-100">
+                    <div class="mb-4">
+                         <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Бошланиш</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Опыт работы</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Онг ости блоклари билан ишлаш бўйича мутахасис
-
-
-                    </p>
+                    <h3 class="text-2xl font-bold mb-2">Якка Консультация</h3>
+                    <p class="text-slate-500 mb-6 h-12">Ҳолатни тушуниш ва илдизни аниқлаш учун</p>
+                    <div class="text-4xl font-serif font-bold text-teal-700 mb-6">
+                        80 <span class="text-base font-sans text-slate-400 font-normal">дақиқа</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Ҳолатни аниқ тушуниш</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Тана ва онгни тинчлантириш</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Муаммонинг илдизини топиш</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Ўзингизни йўқотиб қўймаслик</li>
+                    </ul>
+                    <button onclick="selectService('consultation', 'Якка Консультация (80 дақ)')" class="w-full py-3 border-2 border-teal-600 text-teal-700 font-bold rounded-xl hover:bg-teal-50 transition-colors">
+                        Танлаш
+                    </button>
                 </div>
 
-                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md">
-                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6">
-                        <i class="ph ph-chat-circle-text text-2xl"></i>
+                <!-- Card 2: Session -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow p-8 flex flex-col border border-slate-100 relative">
+                    <div class="mb-4">
+                        <span class="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Асосий иш</span>
+                   </div>
+                    <h3 class="text-2xl font-bold mb-2">Якка Сеанс</h3>
+                    <p class="text-slate-500 mb-6 h-12">Чуқур психотерапевтик иш</p>
+                    <div class="text-4xl font-serif font-bold text-teal-700 mb-6">
+                        300 000 <span class="text-base font-sans text-slate-400 font-normal">сўм / 60 дақ</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">[SIZNING YOZUVINGIZ]</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                       Соғломсизлик
-
-                    </p>
+                    <ul class="space-y-3 mb-8 flex-1 text-slate-600 text-sm">
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Онг ости блоклари билан ишлаш</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Болалик хотираларини қайта ишлаш</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Тана реакцияларини юмшатиш</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-teal-500 mt-0.5"></i> Муносабат сценарийлари</li>
+                    </ul>
+                    <button onclick="selectService('session', 'Якка Сеанс (60 дақ)')" class="w-full py-3 bg-teal-600 text-white font-bold rounded-xl hover:bg-teal-700 transition-colors">
+                        Сеансга ёзилиш
+                    </button>
                 </div>
 
-                <div class="bg-stone-50 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md">
-                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6">
-                        <i class="ph ph-book-open text-2xl"></i>
+                <!-- Card 3: Special Offer (10 sessions) -->
+                <div class="bg-teal-900 rounded-2xl shadow-xl p-8 flex flex-col border-2 border-gold-500 relative transform md:-translate-y-4 text-white">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-teal-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg flex items-center gap-1">
+                        <i class="ph-fill ph-gift"></i> МАХСУС ТАКЛИФ
                     </div>
-                    <h3 class="text-xl font-bold mb-3">[SIZNING YOZUVINGIZ]</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        [SIZNING YOZUVINGIZ]
-                    </p>
+                    <h3 class="text-2xl font-bold mb-2 text-white">10 та Сеанс</h3>
+                    <p class="text-teal-200 mb-6 h-12">Чуқур ўзгариш ва барқарор натижа учун</p>
+                    
+                    <div class="bg-white/10 p-4 rounded-lg mb-6 border border-white/20">
+                        <p class="text-sm text-teal-100 mb-1">Бирданига тўлов қилинганда:</p>
+                        <p class="font-bold text-gold-500 flex items-center gap-2">
+                             + 1 та Коучинг сессия СОВҒА <span class="text-xs bg-gold-500 text-teal-900 px-1.5 py-0.5 rounded">700 000 сўмлик</span>
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8 flex-1 text-teal-100 text-sm">
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-gold-500 mt-0.5"></i> Иш узлуксиз олиб борилади</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-gold-500 mt-0.5"></i> Хавфсизлик ва ишонч шаклланади</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-gold-500 mt-0.5"></i> Чуқур болалик травмалари</li>
+                        <li class="flex items-start gap-2"><i class="ph-bold ph-check text-gold-500 mt-0.5"></i> Совға сессия: натижани ҳаётга тадбиқ қилиш</li>
+                    </ul>
+                    <button onclick="selectService('pack10', '10 Сеанс + Коучинг (Акция)')" class="w-full py-3 bg-gold-500 text-teal-900 font-bold rounded-xl hover:bg-gold-600 transition-colors shadow-lg hover:shadow-gold-500/30">
+                        Олиш (Бонус билан)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Additional Packages List -->
+            <div id="packages" class="mt-20">
+                <h3 class="text-2xl font-serif font-bold text-slate-900 mb-8 text-center">Психотерапевтик Пакетлар</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-teal-300">
+                        <h4 class="font-bold text-lg mb-2 text-teal-800">7 кунлик пакет</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>• Ҳолатни барқарорлаштириш</li>
+                            <li>• Паника ва хавотирни юмшатиш</li>
+                            <li>• Танага хавфсизликни қайтариш</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-teal-400">
+                        <h4 class="font-bold text-lg mb-2 text-teal-800">10 кунлик пакет</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>• Онг ости тўсиқлари билан иш</li>
+                            <li>• Болалик травмаларини юмшатиш</li>
+                            <li>• Ҳиссий барқарорлик</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-teal-500">
+                        <h4 class="font-bold text-lg mb-2 text-teal-800">20 кунлик пакет</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>• Муносабат сценарийлари</li>
+                            <li>• Аёлликка очилиш</li>
+                            <li>• Ишонч ва қабул қилишни тиклаш</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-teal-600">
+                        <h4 class="font-bold text-lg mb-2 text-teal-800">30 кунлик пакет</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>• Чуқур психотерапевтик иш</li>
+                            <li>• Ота-она ва муносабат дастурлари</li>
+                            <li>• Ички мустақилликни шакллантириш</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                     <button onclick="selectService('package_days', 'Психотерапевтик Пакет')" class="text-teal-700 font-bold border-b-2 border-teal-200 hover:border-teal-600 transition-colors pb-1">
+                        Пакет ҳақида маълумот олиш
+                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- Reviews Section (Generic/Placeholders in Uzbek) -->
     <section id="reviews" class="py-20 px-4 sm:px-6 bg-teal-900 text-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Fikrlar</h2>
-                <p class="text-teal-200">[SIZNING YOZUVINGIZ]</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Мижозлар фикрлари</h2>
+                <p class="text-teal-200">Ҳаёти ўзгарган инсонлар ҳикоялари</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Review 1 -->
-                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700 hover:bg-teal-750 transition-colors">
-                    <div class="absolute -top-4 -left-2 text-teal-600 opacity-50 font-serif text-6xl">"</div>
-                    <div class="flex gap-1 mb-4 text-yellow-400">
+                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700">
+                    <div class="flex gap-1 mb-4 text-gold-500">
                         <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                     </div>
-                    <p class="text-teal-100 mb-6 italic relative z-10">
-                        [KLIENT FIKRI]
+                    <p class="text-teal-100 mb-6 italic text-sm">
+                        "Ойгул Равшановна билан ишлаганимдан кейин паника хуружлари йўқолди. Энг муҳими, мен ўзимга бўлган ишончни қайтардим. Раҳмат сизга!"
                     </p>
-                    <div class="flex justify-between items-end border-t border-teal-700 pt-4">
-                        <span class="font-bold">[KLIENT ISMI]</span>
-                        <span class="text-xs bg-teal-900 px-2 py-1 rounded text-teal-300 uppercase tracking-wider">[MUAMMOSI]</span>
+                    <div class="border-t border-teal-700 pt-4">
+                        <span class="font-bold block">Дилноза</span>
+                        <span class="text-xs text-teal-400 uppercase">Хавотир ва Паника</span>
                     </div>
                 </div>
 
                 <!-- Review 2 -->
-                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700 hover:bg-teal-750 transition-colors">
-                    <div class="absolute -top-4 -left-2 text-teal-600 opacity-50 font-serif text-6xl">"</div>
-                    <div class="flex gap-1 mb-4 text-yellow-400">
+                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700">
+                    <div class="flex gap-1 mb-4 text-gold-500">
                         <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                     </div>
-                    <p class="text-teal-100 mb-6 italic relative z-10">
-                        [KLIENT FIKRI]
+                    <p class="text-teal-100 mb-6 italic text-sm">
+                        "Муносабатлардаги муаммоларим сабаби болаликдаги травмалар эканлигини тушундим. 10 та сеанс ҳаётимни бутунлай ўзгартирди."
                     </p>
-                    <div class="flex justify-between items-end border-t border-teal-700 pt-4">
-                        <span class="font-bold">[KLIENT ISMI]</span>
-                        <span class="text-xs bg-teal-900 px-2 py-1 rounded text-teal-300 uppercase tracking-wider">[MUAMMOSI]</span>
+                    <div class="border-t border-teal-700 pt-4">
+                        <span class="font-bold block">Мадина</span>
+                        <span class="text-xs text-teal-400 uppercase">Муносабатлар</span>
                     </div>
                 </div>
 
                 <!-- Review 3 -->
-                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700 hover:bg-teal-750 transition-colors">
-                    <div class="absolute -top-4 -left-2 text-teal-600 opacity-50 font-serif text-6xl">"</div>
-                    <div class="flex gap-1 mb-4 text-yellow-400">
+                <div class="bg-teal-800 p-8 rounded-2xl relative border border-teal-700">
+                    <div class="flex gap-1 mb-4 text-gold-500">
                         <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                     </div>
-                    <p class="text-teal-100 mb-6 italic relative z-10">
-                        [KLIENT FIKRI]
+                    <p class="text-teal-100 mb-6 italic text-sm">
+                        "Аёлликка очилиш ва ўзимни қабул қилиш бўйича ишладик. Натижа кутганимдан ҳам аъло бўлди. Ҳозир ўзимни жуда енгил ҳис қиляпман."
                     </p>
-                    <div class="flex justify-between items-end border-t border-teal-700 pt-4">
-                        <span class="font-bold">[KLIENT ISMI]</span>
-                        <span class="text-xs bg-teal-900 px-2 py-1 rounded text-teal-300 uppercase tracking-wider">[MUAMMOSI]</span>
+                    <div class="border-t border-teal-700 pt-4">
+                        <span class="font-bold block">Наргиза</span>
+                        <span class="text-xs text-teal-400 uppercase">Ўзига ишонч</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses / Pricing Section -->
-    <section id="courses" class="py-20 px-4 sm:px-6 bg-stone-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Варианты работы</h2>
-                <div class="w-20 h-1 bg-teal-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow p-8 flex flex-col border border-slate-100">
-                    <h3 class="text-2xl font-bold mb-2">Разовая консультация</h3>
-                    <p class="text-slate-500 mb-6">Для решения конкретного вопроса</p>
-                    <div class="text-4xl font-serif font-bold text-teal-600 mb-6">
-                        3 000 ₽ <span class="text-base font-sans text-slate-400 font-normal">/ 55 мин</span>
-                    </div>
-                    <ul class="space-y-3 mb-8 flex-1 text-slate-600">
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Онлайн (Zoom/Skype)</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Разбор одной ситуации</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Рекомендации</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Поддержка 2 дня</li>
-                    </ul>
-                    <button onclick="selectService('consultation')" class="w-full py-3 border-2 border-teal-600 text-teal-600 font-bold rounded-xl hover:bg-teal-50 transition-colors">
-                        Выбрать
-                    </button>
-                </div>
-
-                <!-- Card 2 (Popular) -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col border-2 border-teal-500 relative transform md:-translate-y-4">
-                    <div class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-                        Популярное
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Пакет "Терапия"</h3>
-                    <p class="text-slate-500 mb-6">Глубинная проработка проблем</p>
-                    <div class="text-4xl font-serif font-bold text-teal-600 mb-6">
-                        13 500 ₽ <span class="text-base font-sans text-slate-400 font-normal">/ 5 сессий</span>
-                    </div>
-                    <ul class="space-y-3 mb-8 flex-1 text-slate-600">
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Экономия 1500 ₽</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Регулярные встречи</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Глубинный анализ</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Дневник эмоций</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Домашние задания</li>
-                    </ul>
-                    <button onclick="selectService('therapy_pack')" class="w-full py-3 bg-teal-600 text-white font-bold rounded-xl hover:bg-teal-700 transition-colors shadow-lg hover:shadow-teal-500/30">
-                        Начать терапию
-                    </button>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow p-8 flex flex-col border border-slate-100">
-                    <h3 class="text-2xl font-bold mb-2">Курс "Самооценка"</h3>
-                    <p class="text-slate-500 mb-6">Групповой онлайн-курс</p>
-                    <div class="text-4xl font-serif font-bold text-teal-600 mb-6">
-                        5 900 ₽ <span class="text-base font-sans text-slate-400 font-normal">/ 4 недели</span>
-                    </div>
-                    <ul class="space-y-3 mb-8 flex-1 text-slate-600">
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> 8 видеоуроков</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Закрытый чат</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> 2 общих вебинара</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Рабочая тетрадь PDF</li>
-                        <li class="flex items-center gap-2"><i class="ph-bold ph-check text-teal-500"></i> Доступ навсегда</li>
-                    </ul>
-                    <button onclick="selectService('course_self')" class="w-full py-3 border-2 border-teal-600 text-teal-600 font-bold rounded-xl hover:bg-teal-50 transition-colors">
-                        Записаться на курс
-                    </button>
                 </div>
             </div>
         </div>
@@ -310,21 +369,21 @@
     <!-- Contact Form Section -->
     <section id="contact" class="py-20 px-4 sm:px-6 bg-white">
         <div class="max-w-4xl mx-auto">
-            <div class="bg-teal-50 rounded-3xl p-8 md:p-12 shadow-inner">
+            <div class="bg-teal-50 rounded-3xl p-8 md:p-12 shadow-inner border border-teal-100">
                 <div class="text-center mb-10">
-                    <h2 class="text-3xl font-serif font-bold text-slate-900 mb-3">Запись и Оплата</h2>
-                    <p class="text-slate-600">Заполните форму, и я свяжусь с вами для подтверждения времени и оплаты.</p>
+                    <h2 class="text-3xl font-serif font-bold text-slate-900 mb-3">Қабулга ёзилиш</h2>
+                    <p class="text-slate-600">Шаклни тўлдиринг, мен сиз билан боғланиб, вақтни келишиб оламиз.</p>
                 </div>
 
-                <!-- Success Message Container (Hidden by default) -->
-                <div id="success-message" class="hidden bg-white p-8 rounded-2xl text-center shadow-sm fade-in">
-                    <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <!-- Success Message Container -->
+                <div id="success-message" class="hidden bg-white p-8 rounded-2xl text-center shadow-sm fade-in border border-green-100">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="ph-bold ph-check text-3xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Спасибо за заявку!</h3>
-                    <p class="text-slate-600 mb-6">Ваши данные успешно отправлены. Я напишу вам на Email в течение 24 часов.</p>
-                    <button onclick="resetForm()" class="text-teal-600 font-bold hover:underline">
-                        Отправить еще одну заявку
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Ариза юборилди!</h3>
+                    <p class="text-slate-600 mb-6">Раҳмат. Тез орада сиз билан боғланаман.</p>
+                    <button onclick="resetForm()" class="text-teal-700 font-bold hover:underline">
+                        Яна бир ариза юбориш
                     </button>
                 </div>
 
@@ -332,41 +391,40 @@
                 <form id="lead-form" class="space-y-6 max-w-lg mx-auto">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Ваше имя</label>
-                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="Иван Иванов">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Исмингиз</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="Исмингизни киритинг">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="ivan@example.com">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Телефон / Telegram</label>
+                            <input type="text" name="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="+998 90 123 45 67">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Выберите услугу</label>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Хизмат турини танланг</label>
                         <div class="relative">
                             <select id="service-select" name="serviceType" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all appearance-none bg-white">
-                                <option value="consultation">Разовая консультация (3 000 ₽)</option>
-                                <option value="therapy_pack">Пакет "Терапия" (13 500 ₽)</option>
-                                <option value="course_self">Курс "Самооценка" (5 900 ₽)</option>
+                                <option value="consultation">Якка Консультация (80 дақ)</option>
+                                <option value="session">Якка Сеанс (60 дақ) - 300 000 сўм</option>
+                                <option value="pack3">3 та сеанс тўплами</option>
+                                <option value="pack10">10 Сеанс + Коучинг (Акция)</option>
+                                <option value="package_days">Психотерапевтик Пакет (7-30 кун)</option>
                             </select>
                             <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                                <i class="ph ph-credit-card text-xl"></i>
+                                <i class="ph ph-caret-down text-xl"></i>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Сообщение (необязательно)</label>
-                        <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="Кратко опишите ваш запрос или удобное время..."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Хабар (ихтиёрий)</label>
+                        <textarea id="message-area" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all" placeholder="Қисқача муаммо ҳақида..."></textarea>
                     </div>
 
-                    <button type="submit" id="submit-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
-                        <span>Перейти к оплате</span>
-                        <i class="ph-bold ph-arrow-right"></i>
+                    <button type="submit" id="submit-btn" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                        <span>Ариза қолдириш</span>
+                        <i class="ph-bold ph-paper-plane-right"></i>
                     </button>
-                    <p class="text-xs text-center text-slate-400 mt-4">
-                        Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.
-                    </p>
                 </form>
             </div>
         </div>
@@ -376,125 +434,140 @@
     <footer class="bg-slate-900 text-slate-300 py-12 px-4">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-center md:text-left">
-                <h4 class="text-2xl font-serif font-bold text-white mb-2">Oygul Ravshanovna</h4>
-                <p class="text-sm text-slate-500">Mutaxasis</p>
+                <h4 class="text-2xl font-serif font-bold text-white mb-2">Ойгул Равшановна</h4>
+                <p class="text-sm text-slate-500">Парапсихолог, Онг ости мутахассиси.</p>
             </div>
             
             <div class="flex gap-6 text-2xl">
-                <a href="https://t.me/@sofia_admin" class="hover:text-teal-400 transition-colors"><i class="ph ph-telegram-logo"></i></a>
+                <a href="#" class="hover:text-teal-400 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+                <a href="#" class="hover:text-teal-400 transition-colors"><i class="ph ph-telegram-logo"></i></a>
+                <a href="#" class="hover:text-teal-400 transition-colors"><i class="ph ph-envelope-simple"></i></a>
             </div>
 
             <div class="text-center md:text-right text-sm text-slate-500">
-                <p>© 2025 Barcha huquqlar ximoyalangan</p>
-               
+                <p>© 2025 Барча ҳуқуқлар ҳимояланган.</p>
             </div>
         </div>
     </footer>
 
     <!-- Firebase SDKs -->
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
-        import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+   <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+    import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
 
-        let db, auth, user, appId;
-        let firebaseInitialized = false;
+    // 1. ВСТАВЬТЕ СВОИ ДАННЫЕ СЮДА
+    const firebaseConfig = {
+        apiKey: "AIzaSyCM1SI5DthjRAaQg6qOJYMYpz6jzaio6iI",
+        authDomain: "oygulravshanovna-13910.firebaseapp.com",
+        projectId: "oygulravshanovna-13910",
+        storageBucket: "oygulravshanovna-13910.firebasestorage.app",
+        messagingSenderId: "386916482874",
+        appId: "1:386916482874:web:557aada7c6b5b965811a03"
+    };
 
-        // Initialize Firebase
-        async function initFirebase() {
-            try {
-                if (typeof __firebase_config !== 'undefined' && __firebase_config) {
-                    const config = JSON.parse(__firebase_config);
-                    const app = initializeApp(config);
-                    auth = getAuth(app);
-                    db = getFirestore(app);
-                    appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+    const TELEGRAM_BOT_TOKEN = '7631210990:AAE46G7CYgEPmh-Fn5EU7s68dvxU0Urrwr8';
+    const TELEGRAM_CHAT_ID = '8122937324';
 
-                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                        await signInWithCustomToken(auth, __initial_auth_token);
-                    } else {
-                        await signInAnonymously(auth);
-                    }
+    // Инициализация
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-                    onAuthStateChanged(auth, (u) => {
-                        user = u;
-                        if (u) {
-                            firebaseInitialized = true;
-                            console.log("Firebase Auth Success:", u.uid);
-                        }
-                    });
-                } else {
-                    console.warn("Firebase config missing. Running in DEMO mode.");
-                }
-            } catch (error) {
-                console.error("Firebase Init Error:", error);
-            }
-        }
+    const form = document.getElementById('lead-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-message');
 
-        // Initialize on load
-        initFirebase();
-
-        // --- Application Logic ---
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        // Handle Form Submission
-        const form = document.getElementById('lead-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const successMsg = document.getElementById('success-message');
+        const originalBtnContent = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Юборилмоқда...</span>';
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // UI State: Loading
-            const originalBtnContent = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span>Отправка...</span>';
-
-            const formData = {
-                name: form.name.value,
-                email: form.email.value,
-                serviceType: form.serviceType.value,
-                message: form.message.value
-            };
-
-            try {
-                if (firebaseInitialized && user) {
-                    // Firestore Write
-                    await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'leads'), {
-                        ...formData,
-                        createdAt: serverTimestamp(),
-                        status: 'new'
-                    });
-                } else {
-                    // Demo Simulation
-                    console.log("Demo Submit:", formData);
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                }
-
-                // UI State: Success
-                form.classList.add('hidden');
-                successMsg.classList.remove('hidden');
-
-            } catch (error) {
-                console.error("Submission error:", error);
-                alert("Произошла ошибка при отправке. Попробуйте еще раз.");
-            } finally {
-                // UI State: Reset Button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnContent;
-            }
-        });
-
-        // Expose resetForm to window scope for the button onclick
-        window.resetForm = function() {
-            form.reset();
-            successMsg.classList.add('hidden');
-            form.classList.remove('hidden');
+        const formData = {
+            name: form.name.value,
+            phone: form.phone.value,
+            serviceType: form.serviceType.options[form.serviceType.selectedIndex].text,
+            message: form.message.value || "Хабар қолдирилмаган"
         };
-    </script>
 
-    <!-- UI Scripts (Menu, Scroll) -->
+        // Текст для Telegram
+        const text = `
+<b>🚀 Янги ариза!</b>
+<b>Исм:</b> ${formData.name}
+<b>Тел/ТГ:</b> ${formData.phone}
+<b>Хизмат:</b> ${formData.serviceType}
+<b>Хабар:</b> ${formData.message}
+        `;
+
+        try {
+            // 1. Сохранение в Firebase Firestore
+            await addDoc(collection(db, 'leads'), {
+                ...formData,
+                createdAt: serverTimestamp()
+            });
+
+            // 2. Отправка в Telegram
+            await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: text,
+                    parse_mode: 'HTML'
+                })
+            });
+
+            // Показываем успех
+            form.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+
+        } catch (error) {
+            console.error("Хатолик:", error);
+            alert("Хатолик юз берди. Илтимос, интернетни текшириб қайта уриниб кўринг.");
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+        }
+    });
+
+    // Функция для кнопок "Танлаш" в карточках хизматлар
+    window.selectService = function(val, text) {
+        const select = document.getElementById('service-select');
+        select.value = val;
+        scrollToSection('contact');
+        
+        // Фокусируемся на поле имени для удобства
+        document.getElementsByName('name')[0].focus();
+    };
+
+    window.resetForm = function() {
+        form.reset();
+        successMsg.classList.add('hidden');
+        form.classList.remove('hidden');
+    };
+</script>
+
+<script>
+    // Скрипт для прокрутки и меню
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('open')) {
+            menu.classList.remove('open');
+        }
+    }
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+    });
+</script>
+
+    <!-- UI Scripts -->
     <script>
-        // Menu Toggle Logic
+        // Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = menuBtn.querySelector('i');
@@ -511,33 +584,40 @@
             }
         });
 
-        // Smooth Scroll & Close Menu
+        // Smooth Scroll
         function scrollToSection(id) {
             const element = document.getElementById(id);
             if (element) {
-                // Close menu if open
                 if (isMenuOpen) {
                     mobileMenu.classList.remove('open');
                     menuIcon.classList.replace('ph-x', 'ph-list');
                     isMenuOpen = false;
                 }
-                
-                // Account for fixed header
                 const headerOffset = 80;
                 const elementPosition = element.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
             }
         }
 
-        // Service Selection Helper
-        function selectService(value) {
+        // Service Selection Helper & Message Template
+        function selectService(value, label) {
             const select = document.getElementById('service-select');
+            const messageArea = document.getElementById('message-area');
+            
             select.value = value;
+            
+            // Auto-fill message based on user request templates
+            let template = `Ассалому алайкум, Ойгул Равшановна.\n`;
+            if (value === 'pack10') {
+                template += `Мен 10 та сеанс ва совға коучинг сессияси ҳақида маълумот олмоқчи эдим.\nИлтимос, менинг ҳолатим учун шу формат мос келадими?`;
+            } else if (value === 'session') {
+                 template += `Мен якка сеансга ёзилмоқчиман.`;
+            } else {
+                template += `Мен ${label || 'хизмат'} ҳақида маълумот олмоқчи эдим.`;
+            }
+            
+            messageArea.value = template;
             scrollToSection('contact');
         }
     </script>
