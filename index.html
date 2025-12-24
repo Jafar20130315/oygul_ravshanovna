@@ -510,36 +510,37 @@
 
     <!-- Firebase SDKs & Logic -->
     <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
-        import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+    import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
 
-        // 1. ВСТАВЬТЕ СВОИ ДАННЫЕ СЮДА
-        const firebaseConfig = {
-            apiKey: "AIzaSyCM1SI5DthjRAaQg6qOJYMYpz6jzaio6iI", // Сизнинг калитларингиз шу ерга керак
-            authDomain: "oygulravshanovna-13910.firebaseapp.com",
-            projectId: "oygulravshanovna-13910",
-            storageBucket: "oygulravshanovna-13910.firebasestorage.app",
-            messagingSenderId: "386916482874",
-            appId: "1:386916482874:web:557aada7c6b5b965811a03"
-        };
+    // 1. Firebase konfiguratsiyasi
+    const firebaseConfig = {
+        apiKey: "AIzaSyCM1SI5DthjRAaQg6qOJYMYpz6jzaio6iI", 
+        authDomain: "oygulravshanovna-13910.firebaseapp.com",
+        projectId: "oygulravshanovna-13910",
+        storageBucket: "oygulravshanovna-13910.firebasestorage.app",
+        messagingSenderId: "386916482874",
+        appId: "1:386916482874:web:557aada7c6b5b965811a03"
+    };
 
-        const TELEGRAM_BOT_TOKEN = '7631210990:AAE46G7CYgEPmh-Fn5EU7s68dvxU0Urrwr8'; // Token
-        const TELEGRAM_CHAT_ID = '8122937324'; // Chat ID
+    // 2. Worker manzili (Token o'rniga shuni ishlatamiz)
+    const WORKER_URL = 'https://SIZNING_WORKERINGIZ_NOMI.workers.dev'; 
 
-        // Initialize
-        let db;
-        try {
-            const app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            console.log("Firebase initialized");
-        } catch (e) {
-            console.error("Firebase init error (check config):", e);
-        }
+    // Initialize Firebase
+    let db;
+    try {
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        console.log("Firebase muvaffaqiyatli ulandi");
+    } catch (e) {
+        console.error("Firebase init xatosi:", e);
+    }
 
-        const form = document.getElementById('lead-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const successMsg = document.getElementById('success-message');
+    const form = document.getElementById('lead-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-message');
 
+    if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -547,68 +548,69 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span>Юборилмоқда...</span>';
 
+            // Ma'lumotlarni yig'ish
             const formData = {
                 name: form.name.value,
                 phone: form.phone.value,
-                serviceType: form.serviceType.options[form.serviceType.selectedIndex].text,
+                service: form.serviceType.options[form.serviceType.selectedIndex].text,
                 message: form.message.value || "Хабар қолдирилмаган"
             };
 
-            const text = `
-<b>🚀 Янги ариза!</b>
-
-<b>Исм:</b> ${formData.name}
-<b>Тел/Telegram:</b> ${formData.phone}
-<b>Хизмат:</b> ${formData.serviceType}
-<b>Хабар:</b> ${formData.message}
-            `;
-
             try {
-                // 1. Save to Firebase
+                // 1. Firebase-ga saqlash
                 if (db) {
                     await addDoc(collection(db, 'leads'), {
                         ...formData,
                         createdAt: serverTimestamp()
                     });
+                    console.log("Firebase-ga saqlandi");
                 }
 
-                // 2. Send to Telegram
-                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                // 2. Cloudflare Worker orqali Telegramga yuborish
+                // Worker o'ziga kelgan JSON-ni avtomat botga yuboradi (KV bazadagi id'larga)
+                const response = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: text,
-                        parse_mode: 'HTML'
-                    })
+                    body: JSON.stringify(formData)
                 });
 
-                form.classList.add('hidden');
-                successMsg.classList.remove('hidden');
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                } else {
+                    throw new Error('Worker xatosi');
+                }
 
             } catch (error) {
-                console.error("Хатолик:", error);
-                alert("Хатолик юз берди. Интернетни текширинг.");
+                console.error("Xatolik tafsiloti:", error);
+                alert("Хатолик юз берди. Интернетни текшириб, қайта уриниб кўринг.");
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnContent;
             }
         });
+    }
 
-        window.selectService = function(val, text) {
-            const select = document.getElementById('service-select');
+    // Xizmatni tanlash funksiyasi
+    window.selectService = function(val) {
+        const select = document.getElementById('service-select');
+        if (select) {
             select.value = val;
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            document.getElementsByName('name')[0].focus();
-        };
+            const nameInput = document.getElementsByName('name')[0];
+            if (nameInput) nameInput.focus();
+        }
+    };
 
-        window.resetForm = function() {
+    // Formani qayta tiklash
+    window.resetForm = function() {
+        if (form) {
             form.reset();
             successMsg.classList.add('hidden');
             form.classList.remove('hidden');
-        };
-    </script>
-
+        }
+    };
+</script>
     <script>
         // Скрипт для прокрутки и меню
         function scrollToSection(id) {
